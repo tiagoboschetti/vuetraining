@@ -12,10 +12,10 @@
         <v-flex xs12 class="mb-3" red v-for="(x, index) in dados.menuitens" :key="index">
           <bunda-suja :esconder="false" @cancelar="cancelarPai" :cor="x.cor" :titulo="x.value" :text="x.onclick"></bunda-suja>
         </v-flex>
-        <v-flex xs12> 
+        <v-flex xs12>
           <bunda-suja v-if="mostrarCard" :cor="cor1" :titulo="titulo1" :text="text1"></bunda-suja>
         </v-flex>
-        <v-progress-circular size="100" v-model="valorbutao"></v-progress-circular>       
+        <v-progress-circular size="100" v-model="valorbutao"></v-progress-circular>
       </v-layout>
   </v-container>
 
@@ -55,14 +55,14 @@ import { setInterval } from 'timers';
         console.log('Cancelou do Pai');
       },
       amostra() {
-        this.mostrarCard = !this.mostrarCard;       
+        this.mostrarCard = !this.mostrarCard;
       },
       incrementar() {
         setInterval(() => {
           this.valorbutao += 25;
           if (this.valorbutao === 100) {
             this.valorbutao = 0
-            };
+            }
         }, 500);
       }
     },
