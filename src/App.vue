@@ -1,24 +1,18 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>TIAGUINHO</span>
-      </v-toolbar-title>
-    </v-toolbar>
-
     <v-content>
-      <HelloWorld/>
+      <CharCreation/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import CharCreation from './components/CharCreation'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CharCreation
   },
   data () {
     return {
