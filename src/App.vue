@@ -1,18 +1,18 @@
 <template>
   <v-app>
     <v-content>
-      <CharCreation/>
+      <CreationView/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import CharCreation from './components/CharCreation'
+import CreationView from './components/CreationView'
 
 export default {
   name: 'App',
   components: {
-    CharCreation
+    CreationView,
   },
   data () {
     return {
