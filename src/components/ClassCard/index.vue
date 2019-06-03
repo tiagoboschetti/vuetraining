@@ -4,7 +4,7 @@
       <v-layout justify-center align-center>
         <img class="classImage" :src="image" height="720px" />
         <div class="classImage__text">
-          {{ titulo }}
+          {{ title }}
         </div>
       </v-layout>
     </v-card-text>
@@ -14,19 +14,22 @@
 <script>
 export default {
   props: {
-    titulo: {
+    title: {
       type: String,
       default: "oof! sorry"
     },
     image: {
       type: String,
-      default: "http://pngimg.com/uploads/alien/alien_PNG98.png"
+      default:
+        "https://66.media.tumblr.com/1ada0dd8dd359382129e11aa92e07939/tumblr_nn0yoz1ez31tv3g49o1_1280.jpg"
     }
   }
 };
 </script>
 
 <style lang="sass">
+.v-card
+  border-radius: 20px 20px 20px 20px !important
 .charCard
   transition: all .2s ease-in-out
   filter: grayscale(1)
@@ -36,12 +39,14 @@ export default {
 
 .classImage
   display: flex
+  border-radius: 20px 20px 20px 20px !important
   justify-content: center
-  transform: scaleY(-1)
+  transform: scaleX(1.04)
   &__text
     width: 100%
     height: 45%
-    background:  linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))
+    border-radius: 20px 20px 20px 20px !important
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))
     position: absolute
     display: flex
     justify-content: center

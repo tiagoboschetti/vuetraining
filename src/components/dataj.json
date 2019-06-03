@@ -1,7 +1,0 @@
-{
-    "menuitens": [
-    {"cor": "blue", "value": "New", "onclick": "CreateNewDoc"},
-    {"cor": "red", "value": "Open", "onclick": "OpenDoc"},
-    {"cor": "yellow", "value": "Close", "onclick": "CloseDoc"}
-    ]
-}

@@ -11,14 +11,13 @@
         >
           <v-card-text>
             <v-layout>
-              <v-flex xs4 class="mb-3">
-                <class-card :titulo="titulo"></class-card>
-              </v-flex>
-              <v-flex xs4 class="mb-3">
-                <class-card></class-card>
-              </v-flex>
-              <v-flex xs4 class="mb-3">
-                <class-card></class-card>
+              <v-flex
+                xs4
+                class="mb-3"
+                v-for="(x, index) in classesData"
+                :key="index"
+              >
+                <class-card :title="x.title" :image="x.image"></class-card>
               </v-flex>
             </v-layout>
           </v-card-text>
@@ -31,7 +30,7 @@
     <div>
       <div class="texto">{{fafafa}}</div>
       <v-btn @click="mudarRola" class="sexo2">rola</v-btn>
-      <v-btn @click="amostra">{{titulobotao}}</v-btn>
+      <v-btn @click="amostra">{{titlebotao}}</v-btn>
       <v-btn @click="incrementar" large icon>
         <v-icon large>add</v-icon>
       </v-btn
@@ -48,16 +47,22 @@
   </v-container>
   -->
 </template>
+
 <script>
 import ClassCard from "./ClassCard";
+import classesData from "./json/classesData.json";
 
 export default {
   components: {
-    ClassCard
+    ClassCard,
+    classesData
   },
-  data: () => ({
-    titulo: "satanais"
-  })
+
+  computed: {
+    classesData() {
+      return classesData.data;
+    }
+  }
 };
 </script>
 
