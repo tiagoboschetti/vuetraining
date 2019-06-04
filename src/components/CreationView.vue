@@ -4,23 +4,23 @@
       <div class="bgImage__overlay" />
       <div class="bgImage__content">
         <v-card
-          width="85%"
-          height="75%"
           class="elevation-24"
           color="grey darken-4"
         >
-          <v-card-text>
-            <v-layout>
+          <v-layout class="rola">
+            <v-card-text class="foo">
               <v-flex
-                xs4
+                xs12
+                sm6
+                lg3
                 class="mb-3"
-                v-for="(x, index) in classesData"
-                :key="index"
+                v-for="classes in classesData"
+                :key="classes.title"
               >
-                <class-card :title="x.title" :image="x.image"></class-card>
+                <class-card :title="classes.title" :image="classes.image"/>
               </v-flex>
-            </v-layout>
-          </v-card-text>
+            </v-card-text>
+          </v-layout>
         </v-card>
       </div>
     </div>
@@ -55,14 +55,13 @@ import classesData from "./json/classesData.json";
 export default {
   components: {
     ClassCard,
-    classesData
+    // classesData,
   },
-
   computed: {
     classesData() {
       return classesData.data;
     }
-  }
+  },
 };
 </script>
 
@@ -81,6 +80,15 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-    height: 100vh
-    width: 100vw
+    height: 100%
+    width: 85%
+.rola
+  background-color: red !important
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+.foo
+  display: flex
+  justify-content: space-between
 </style>

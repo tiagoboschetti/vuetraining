@@ -1,13 +1,11 @@
 <template>
-  <v-card class="charCard mx-3" ripple>
-    <v-card-text class="pa-0">
-      <v-layout justify-center align-center>
-        <img class="classImage" :src="image" height="720px" />
-        <div class="classImage__text">
-          {{ title }}
-        </div>
-      </v-layout>
-    </v-card-text>
+  <v-card class="charCard" ripple>
+    <v-layout class="salsicha">
+      <img class="classImage" :src="image"/>
+      <div class="classImage__text">
+        {{ title }}
+      </div>
+    </v-layout>
   </v-card>
 </template>
 
@@ -28,9 +26,9 @@ export default {
 </script>
 
 <style lang="sass">
-.v-card
-  border-radius: 20px 20px 20px 20px !important
 .charCard
+  width: 100%
+  height: 100%
   transition: all .2s ease-in-out
   filter: grayscale(1)
   &:hover
@@ -39,13 +37,13 @@ export default {
 
 .classImage
   display: flex
-  border-radius: 20px 20px 20px 20px !important
+  height: 100%
+  width: 100%
   justify-content: center
   transform: scaleX(1.04)
   &__text
     width: 100%
     height: 45%
-    border-radius: 20px 20px 20px 20px !important
     background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))
     position: absolute
     display: flex
@@ -53,5 +51,8 @@ export default {
     align-items: flex-end
     font-size: 45px
     letter-spacing: 2px
-    bottom: 0px
+    bottom: 0
+.salsicha
+  width: 100%
+  height: 100%
 </style>
